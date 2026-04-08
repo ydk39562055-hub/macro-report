@@ -1,0 +1,6 @@
+yfinance>=0.2.36
+pandas>=2.0.0
+numpy>=1.24.0
+fredapi>=0.5.1
+google-generativeai>=0.7.0
+requests>=2.31.0
