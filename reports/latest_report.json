@@ -1,32 +1,32 @@
 {
-  "date": "2026-04-09 00:16 KST",
-  "macro_summary": "VIX 21.64 (-16.06%) | HY Spread 3.12 | Nasdaq 2.56% | BTC -1.25%",
+  "date": "2026-04-09 00:19 KST",
+  "macro_summary": "VIX 21.58 (-16.29%) | HY Spread 3.12 | Nasdaq 2.56% | BTC -1.16%",
   "expert_debate": {
-    "analyst_a": "생성 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 29.685078194s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}",
-    "analyst_b": "생성 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 29.685078194s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}",
-    "analyst_c": "생성 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 29.685078194s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}"
+    "analyst_a": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+    "analyst_b": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+    "analyst_c": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.5637,
-    "nasdaq_vs_semiconductor": 0.8272,
-    "nasdaq_vs_vix": -0.8438,
-    "nasdaq_vs_treasury_10y": -0.2259,
-    "nasdaq_vs_dollar_index": -0.3773,
-    "bitcoin_vs_semiconductor": 0.4092,
-    "bitcoin_vs_vix": -0.486,
-    "bitcoin_vs_treasury_10y": 0.0384,
-    "bitcoin_vs_dollar_index": -0.1024,
-    "semiconductor_vs_vix": -0.6952,
-    "semiconductor_vs_treasury_10y": -0.1127,
-    "semiconductor_vs_dollar_index": -0.3442,
-    "vix_vs_treasury_10y": 0.2444,
-    "vix_vs_dollar_index": 0.2447,
-    "treasury_10y_vs_dollar_index": 0.3675
+    "nasdaq_vs_bitcoin": 0.5646,
+    "nasdaq_vs_semiconductor": 0.8275,
+    "nasdaq_vs_vix": -0.844,
+    "nasdaq_vs_treasury_10y": -0.228,
+    "nasdaq_vs_dollar_index": -0.3756,
+    "bitcoin_vs_semiconductor": 0.4093,
+    "bitcoin_vs_vix": -0.4864,
+    "bitcoin_vs_treasury_10y": 0.038,
+    "bitcoin_vs_dollar_index": -0.1039,
+    "semiconductor_vs_vix": -0.6958,
+    "semiconductor_vs_treasury_10y": -0.116,
+    "semiconductor_vs_dollar_index": -0.3431,
+    "vix_vs_treasury_10y": 0.2465,
+    "vix_vs_dollar_index": 0.2435,
+    "treasury_10y_vs_dollar_index": 0.3676
   },
   "key_metrics": {
     "vix": {
-      "value": 21.64,
-      "change_pct": -16.06
+      "value": 21.58,
+      "change_pct": -16.29
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
@@ -35,24 +35,24 @@
       "change": 0.07
     },
     "nasdaq": {
-      "value": 22580.5098,
+      "value": 22582.4082,
       "change_pct": 2.56
     },
     "bitcoin": {
-      "value": 71039.4141,
-      "change_pct": -1.25
+      "value": 71107.0391,
+      "change_pct": -1.16
     },
     "semiconductor": {
-      "value": 366.55,
-      "change_pct": 5.4
+      "value": 366.92,
+      "change_pct": 5.51
     },
     "treasury_10y": {
-      "value": 4.269,
-      "change_pct": -1.7
+      "value": 4.266,
+      "change_pct": -1.77
     },
     "dollar_index": {
-      "value": 98.794,
-      "change_pct": -0.85
+      "value": 98.828,
+      "change_pct": -0.81
     }
   },
   "fred_macro": {
@@ -94,11 +94,11 @@
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 3029.44,
+    "rate_nasdaq_vol_ratio": 2828.74,
     "panic_selling": {
-      "vix_z_score": -3.13,
+      "vix_z_score": -3.16,
       "is_panic": false,
-      "latest_vix_change_pct": -16.06
+      "latest_vix_change_pct": -16.29
     },
     "liquidity_crisis": {
       "hy_spread": 3.12,
