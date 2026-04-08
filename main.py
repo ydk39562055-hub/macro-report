@@ -9,7 +9,8 @@ import datetime
 import numpy as np
 import pandas as pd
 import yfinance as yf
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 # ── 설정 ──────────────────────────────────────────────────────────────────────
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
@@ -201,11 +202,13 @@ def latest_values(market: dict) -> dict:
 # ── AI 전문가 토론 생성 ────────────────────────────────────────────────────────
 def generate_debate(facts: dict, api_key: str) -> dict:
     if not api_key:
+        print("[ERR]  GOOGLE_API_KEY 환경변수 없음")
         return {k: "GOOGLE_API_KEY 없음" for k in ("analyst_a", "analyst_b", "analyst_c")}
 
+    print(f"[OK]   GOOGLE_API_KEY 확인됨 (길이: {len(api_key)})")
+
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        client = genai.Client(api_key=api_key)
 
         prompt = f"""
 당신은 글로벌 헤지펀드 투자 전략 회의를 주재하는 AI입니다.
@@ -236,7 +239,10 @@ SOXX·나스닥 데이터 기반으로 AI·기술 섹터 구조적 성장 팩트
   "analyst_c": "..."
 }}
 """
-        resp = model.generate_content(prompt)
+        resp = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt,
+        )
         text = resp.text.strip()
 
         # 마크다운 코드블록 제거
