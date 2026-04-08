@@ -1,32 +1,32 @@
 {
-  "date": "2026-04-09 00:19 KST",
-  "macro_summary": "VIX 21.58 (-16.29%) | HY Spread 3.12 | Nasdaq 2.56% | BTC -1.16%",
+  "date": "2026-04-09 08:55 KST",
+  "macro_summary": "VIX 21.04 (-18.39%) | HY Spread 3.12 | Nasdaq 2.8% | BTC -1.17%",
   "expert_debate": {
     "analyst_a": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
     "analyst_b": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
     "analyst_c": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.5646,
-    "nasdaq_vs_semiconductor": 0.8275,
-    "nasdaq_vs_vix": -0.844,
-    "nasdaq_vs_treasury_10y": -0.228,
-    "nasdaq_vs_dollar_index": -0.3756,
-    "bitcoin_vs_semiconductor": 0.4093,
-    "bitcoin_vs_vix": -0.4864,
-    "bitcoin_vs_treasury_10y": 0.038,
-    "bitcoin_vs_dollar_index": -0.1039,
-    "semiconductor_vs_vix": -0.6958,
-    "semiconductor_vs_treasury_10y": -0.116,
-    "semiconductor_vs_dollar_index": -0.3431,
-    "vix_vs_treasury_10y": 0.2465,
-    "vix_vs_dollar_index": 0.2435,
-    "treasury_10y_vs_dollar_index": 0.3676
+    "nasdaq_vs_bitcoin": 0.5595,
+    "nasdaq_vs_semiconductor": 0.8308,
+    "nasdaq_vs_vix": -0.8464,
+    "nasdaq_vs_treasury_10y": -0.2137,
+    "nasdaq_vs_dollar_index": -0.364,
+    "bitcoin_vs_semiconductor": 0.4005,
+    "bitcoin_vs_vix": -0.4816,
+    "bitcoin_vs_treasury_10y": 0.0357,
+    "bitcoin_vs_dollar_index": -0.1081,
+    "semiconductor_vs_vix": -0.7017,
+    "semiconductor_vs_treasury_10y": -0.1038,
+    "semiconductor_vs_dollar_index": -0.3325,
+    "vix_vs_treasury_10y": 0.2353,
+    "vix_vs_dollar_index": 0.2339,
+    "treasury_10y_vs_dollar_index": 0.3499
   },
   "key_metrics": {
     "vix": {
-      "value": 21.58,
-      "change_pct": -16.29
+      "value": 21.04,
+      "change_pct": -18.39
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
@@ -35,24 +35,24 @@
       "change": 0.07
     },
     "nasdaq": {
-      "value": 22582.4082,
-      "change_pct": 2.56
+      "value": 22634.9941,
+      "change_pct": 2.8
     },
     "bitcoin": {
-      "value": 71107.0391,
-      "change_pct": -1.16
+      "value": 71099.5703,
+      "change_pct": -1.17
     },
     "semiconductor": {
-      "value": 366.92,
-      "change_pct": 5.51
+      "value": 370.4,
+      "change_pct": 6.51
     },
     "treasury_10y": {
-      "value": 4.266,
-      "change_pct": -1.77
+      "value": 4.291,
+      "change_pct": -1.2
     },
     "dollar_index": {
-      "value": 98.828,
-      "change_pct": -0.81
+      "value": 99.056,
+      "change_pct": -0.59
     }
   },
   "fred_macro": {
@@ -94,11 +94,11 @@
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 2828.74,
+    "rate_nasdaq_vol_ratio": 6447.84,
     "panic_selling": {
-      "vix_z_score": -3.16,
+      "vix_z_score": -3.44,
       "is_panic": false,
-      "latest_vix_change_pct": -16.29
+      "latest_vix_change_pct": -18.39
     },
     "liquidity_crisis": {
       "hy_spread": 3.12,
