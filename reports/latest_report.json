@@ -1,27 +1,22 @@
 {
-  "date": "2026-04-09 08:55 KST",
-  "macro_summary": "VIX 21.04 (-18.39%) | HY Spread 3.12 | Nasdaq 2.8% | BTC -1.17%",
+  "date": "2026-04-09 12:31 KST",
+  "macro_summary": "VIX 21.04 (-18.39%) | HY Spread 3.12 | Nasdaq 2.8% | BTC -1.46%",
   "expert_debate": {
     "analyst_a": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
     "analyst_b": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
     "analyst_c": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.5595,
     "nasdaq_vs_semiconductor": 0.8308,
     "nasdaq_vs_vix": -0.8464,
     "nasdaq_vs_treasury_10y": -0.2137,
-    "nasdaq_vs_dollar_index": -0.364,
-    "bitcoin_vs_semiconductor": 0.4005,
-    "bitcoin_vs_vix": -0.4816,
-    "bitcoin_vs_treasury_10y": 0.0357,
-    "bitcoin_vs_dollar_index": -0.1081,
+    "nasdaq_vs_dollar_index": -0.3642,
     "semiconductor_vs_vix": -0.7017,
     "semiconductor_vs_treasury_10y": -0.1038,
-    "semiconductor_vs_dollar_index": -0.3325,
+    "semiconductor_vs_dollar_index": -0.3328,
     "vix_vs_treasury_10y": 0.2353,
-    "vix_vs_dollar_index": 0.2339,
-    "treasury_10y_vs_dollar_index": 0.3499
+    "vix_vs_dollar_index": 0.2341,
+    "treasury_10y_vs_dollar_index": 0.35
   },
   "key_metrics": {
     "vix": {
@@ -39,8 +34,8 @@
       "change_pct": 2.8
     },
     "bitcoin": {
-      "value": 71099.5703,
-      "change_pct": -1.17
+      "value": 70893.4766,
+      "change_pct": -1.46
     },
     "semiconductor": {
       "value": 370.4,
@@ -51,7 +46,7 @@
       "change_pct": -1.2
     },
     "dollar_index": {
-      "value": 99.056,
+      "value": 99.052,
       "change_pct": -0.59
     }
   },
