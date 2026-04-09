@@ -239,10 +239,21 @@ SOXX·나스닥 데이터 기반으로 AI·기술 섹터 구조적 성장 팩트
   "analyst_c": "..."
 }}
 """
-        resp = client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=prompt,
-        )
+        import time
+        for attempt in range(3):
+            try:
+                resp = client.models.generate_content(
+                    model="gemini-1.5-flash-8b",
+                    contents=prompt,
+                )
+                break
+            except Exception as retry_e:
+                if attempt < 2 and "429" in str(retry_e):
+                    print(f"[WARN] 할당량 초과, 30초 후 재시도 ({attempt+1}/3)")
+                    time.sleep(30)
+                else:
+                    raise retry_e
+
         text = resp.text.strip()
 
         # 마크다운 코드블록 제거
