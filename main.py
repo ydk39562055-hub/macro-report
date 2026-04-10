@@ -208,7 +208,7 @@ def generate_debate(facts: dict, api_key: str) -> dict:
     print(f"[OK]   GOOGLE_API_KEY 확인됨 (길이: {len(api_key)})")
 
     try:
-        client = genai.Client(api_key=api_key)
+        client = genai.Client(api_key=api_key, http_options=types.HttpOptions(api_version="v1"))
 
         prompt = f"""
 당신은 글로벌 헤지펀드 투자 전략 회의를 주재하는 AI입니다.
