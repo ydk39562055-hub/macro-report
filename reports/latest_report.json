@@ -1,32 +1,32 @@
 {
-  "date": "2026-04-10 22:59 KST",
-  "macro_summary": "VIX 19.08 (-2.1%) | HY Spread 2.94 | Nasdaq 0.48% | BTC 0.82%",
+  "date": "2026-04-10 23:06 KST",
+  "macro_summary": "VIX 19.18 (-1.59%) | HY Spread 2.94 | Nasdaq 0.39% | BTC 0.97%",
   "expert_debate": {
-    "analyst_a": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
-    "analyst_b": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
-    "analyst_c": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+    "analyst_a": "VIX(19.18)와 하이일드 스프레드(2.94)로 리스크 오프 강도는 39.12%, 현금 확보·헤지 필요",
+    "analyst_b": "SOXX와 나스닥 상승(2.05%, 0.39%)으로 AI·기술 섹터 성장, 12% 매수 기대",
+    "analyst_c": "상관계수 0.8329로 통계적 안착 전까지 나스닥과 반도체 포지션 유지"
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.5693,
+    "nasdaq_vs_bitcoin": 0.5694,
     "nasdaq_vs_semiconductor": 0.8329,
-    "nasdaq_vs_vix": -0.8525,
-    "nasdaq_vs_treasury_10y": -0.2139,
-    "nasdaq_vs_dollar_index": -0.3658,
-    "bitcoin_vs_semiconductor": 0.403,
+    "nasdaq_vs_vix": -0.8524,
+    "nasdaq_vs_treasury_10y": -0.2126,
+    "nasdaq_vs_dollar_index": -0.3654,
+    "bitcoin_vs_semiconductor": 0.4036,
     "bitcoin_vs_vix": -0.5031,
-    "bitcoin_vs_treasury_10y": 0.0449,
-    "bitcoin_vs_dollar_index": -0.1286,
+    "bitcoin_vs_treasury_10y": 0.0461,
+    "bitcoin_vs_dollar_index": -0.1289,
     "semiconductor_vs_vix": -0.7102,
-    "semiconductor_vs_treasury_10y": -0.1,
-    "semiconductor_vs_dollar_index": -0.3409,
-    "vix_vs_treasury_10y": 0.236,
-    "vix_vs_dollar_index": 0.2393,
-    "treasury_10y_vs_dollar_index": 0.3556
+    "semiconductor_vs_treasury_10y": -0.0976,
+    "semiconductor_vs_dollar_index": -0.3405,
+    "vix_vs_treasury_10y": 0.235,
+    "vix_vs_dollar_index": 0.2389,
+    "treasury_10y_vs_dollar_index": 0.3536
   },
   "key_metrics": {
     "vix": {
-      "value": 19.08,
-      "change_pct": -2.1
+      "value": 19.18,
+      "change_pct": -1.59
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
@@ -35,24 +35,24 @@
       "change": -0.18
     },
     "nasdaq": {
-      "value": 22931.4805,
-      "change_pct": 0.48
+      "value": 22911.1035,
+      "change_pct": 0.39
     },
     "bitcoin": {
-      "value": 72353.125,
-      "change_pct": 0.82
+      "value": 72461.75,
+      "change_pct": 0.97
     },
     "semiconductor": {
-      "value": 387.46,
-      "change_pct": 2.33
+      "value": 386.41,
+      "change_pct": 2.05
     },
     "treasury_10y": {
-      "value": 4.301,
-      "change_pct": 0.19
+      "value": 4.311,
+      "change_pct": 0.42
     },
     "dollar_index": {
-      "value": 98.617,
-      "change_pct": -0.21
+      "value": 98.62,
+      "change_pct": -0.2
     }
   },
   "fred_macro": {
@@ -94,11 +94,11 @@
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 10452.48,
+    "rate_nasdaq_vol_ratio": 62673.57,
     "panic_selling": {
-      "vix_z_score": -1.26,
+      "vix_z_score": -1.2,
       "is_panic": false,
-      "latest_vix_change_pct": -2.1
+      "latest_vix_change_pct": -1.59
     },
     "liquidity_crisis": {
       "hy_spread": 2.94,
