@@ -1,32 +1,32 @@
 {
-  "date": "2026-04-10 23:06 KST",
-  "macro_summary": "VIX 19.18 (-1.59%) | HY Spread 2.94 | Nasdaq 0.39% | BTC 0.97%",
+  "date": "2026-04-10 23:12 KST",
+  "macro_summary": "VIX 19.03 (-2.36%) | HY Spread 2.94 | Nasdaq 0.37% | BTC 0.95%",
   "expert_debate": {
-    "analyst_a": "VIX(19.18)와 하이일드 스프레드(2.94)로 리스크 오프 강도는 39.12%, 현금 확보·헤지 필요",
-    "analyst_b": "SOXX와 나스닥 상승(2.05%, 0.39%)으로 AI·기술 섹터 성장, 12% 매수 기대",
-    "analyst_c": "상관계수 0.8329로 통계적 안착 전까지 나스닥과 반도체 포지션 유지"
+    "analyst_a": "현재 VIX(공포 지수)가 19.03으로, 최근 하락세를 보이고 있습니다. 또한 하이일드 스프레드(고위험 채권 금리차)가 2.94로, 최근 0.18 하락했습니다. 이로 인해 시장의 리스크가 감소하고 있는 것으로 판단됩니다. 따라서 현금 비중을 높일 필요는 없어 보이며, 리스크 관리를 통해 투자 포트폴리오를 최적화하는 것이 중요할 것입니다. 【결론: 매수】",
+    "analyst_b": "나스닥 지수가 22907.5605로, 최근 0.37% 상승했습니다. 반도체 지수는 385.58로, 최근 1.84% 상승했습니다. 나스닥과 반도체 지수의 상관계수가 0.8331로, 높은 상관관계를 보이고 있습니다. 이는 기술 섹터의 성장 가능성이 높으며, 투자에 긍정적인 영향을 미칠 수 있습니다. 따라서 AI·기술 섹터에 지금 투자하는 것이 매수 타이밍일 수 있습니다. 【결론: 매수】",
+    "analyst_c": "자산 간 상관계수를 분석해 본 결과, 나스닥과 반도체 지수의 상관계수가 0.8331로, 높은 상관관계를 보이고 있습니다. 또한 비트코인과 반도체 지수의 상관계수가 0.4035로, 양의 상관관계를 보이고 있습니다. 그러나 나스닥과 VIX의 상관계수가 -0.8525로, 부의 상관관계를 보이고 있습니다. 이는 분산투자가 잘 되고 있음을 나타내며, 지금 포지션을 유지하는 것이 적절할 수 있습니다. 【결론: 관망】"
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.5694,
-    "nasdaq_vs_semiconductor": 0.8329,
-    "nasdaq_vs_vix": -0.8524,
-    "nasdaq_vs_treasury_10y": -0.2126,
-    "nasdaq_vs_dollar_index": -0.3654,
-    "bitcoin_vs_semiconductor": 0.4036,
-    "bitcoin_vs_vix": -0.5031,
-    "bitcoin_vs_treasury_10y": 0.0461,
-    "bitcoin_vs_dollar_index": -0.1289,
-    "semiconductor_vs_vix": -0.7102,
-    "semiconductor_vs_treasury_10y": -0.0976,
-    "semiconductor_vs_dollar_index": -0.3405,
+    "nasdaq_vs_bitcoin": 0.5693,
+    "nasdaq_vs_semiconductor": 0.8331,
+    "nasdaq_vs_vix": -0.8525,
+    "nasdaq_vs_treasury_10y": -0.2133,
+    "nasdaq_vs_dollar_index": -0.3655,
+    "bitcoin_vs_semiconductor": 0.4035,
+    "bitcoin_vs_vix": -0.5033,
+    "bitcoin_vs_treasury_10y": 0.0456,
+    "bitcoin_vs_dollar_index": -0.1291,
+    "semiconductor_vs_vix": -0.7111,
+    "semiconductor_vs_treasury_10y": -0.0992,
+    "semiconductor_vs_dollar_index": -0.3407,
     "vix_vs_treasury_10y": 0.235,
-    "vix_vs_dollar_index": 0.2389,
-    "treasury_10y_vs_dollar_index": 0.3536
+    "vix_vs_dollar_index": 0.2397,
+    "treasury_10y_vs_dollar_index": 0.354
   },
   "key_metrics": {
     "vix": {
-      "value": 19.18,
-      "change_pct": -1.59
+      "value": 19.03,
+      "change_pct": -2.36
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
@@ -35,24 +35,24 @@
       "change": -0.18
     },
     "nasdaq": {
-      "value": 22911.1035,
-      "change_pct": 0.39
+      "value": 22907.5605,
+      "change_pct": 0.37
     },
     "bitcoin": {
-      "value": 72461.75,
-      "change_pct": 0.97
+      "value": 72452.0625,
+      "change_pct": 0.95
     },
     "semiconductor": {
-      "value": 386.41,
-      "change_pct": 2.05
+      "value": 385.58,
+      "change_pct": 1.84
     },
     "treasury_10y": {
-      "value": 4.311,
-      "change_pct": 0.42
+      "value": 4.307,
+      "change_pct": 0.33
     },
     "dollar_index": {
-      "value": 98.62,
-      "change_pct": -0.2
+      "value": 98.592,
+      "change_pct": -0.23
     }
   },
   "fred_macro": {
@@ -94,11 +94,11 @@
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 62673.57,
+    "rate_nasdaq_vol_ratio": 20892.89,
     "panic_selling": {
-      "vix_z_score": -1.2,
+      "vix_z_score": -1.3,
       "is_panic": false,
-      "latest_vix_change_pct": -1.59
+      "latest_vix_change_pct": -2.36
     },
     "liquidity_crisis": {
       "hy_spread": 2.94,
