@@ -33,8 +33,8 @@ jobs:
 
       - name: Run macro analysis
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          FRED_API_KEY:   ${{ secrets.FRED_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python main.py
 
       - name: Commit & push report

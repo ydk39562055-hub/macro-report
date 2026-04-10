@@ -9,11 +9,10 @@ import datetime
 import numpy as np
 import pandas as pd
 import yfinance as yf
-from google import genai
-from google.genai import types
+from groq import Groq
 
 # ── 설정 ──────────────────────────────────────────────────────────────────────
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 FRED_API_KEY   = os.environ.get("FRED_API_KEY")
 
 TICKERS = {
@@ -202,16 +201,15 @@ def latest_values(market: dict) -> dict:
 # ── AI 전문가 토론 생성 ────────────────────────────────────────────────────────
 def generate_debate(facts: dict, api_key: str) -> dict:
     if not api_key:
-        print("[ERR]  GOOGLE_API_KEY 환경변수 없음")
-        return {k: "GOOGLE_API_KEY 없음" for k in ("analyst_a", "analyst_b", "analyst_c")}
+        print("[ERR]  GROQ_API_KEY 환경변수 없음")
+        return {k: "GROQ_API_KEY 없음" for k in ("analyst_a", "analyst_b", "analyst_c")}
 
-    print(f"[OK]   GOOGLE_API_KEY 확인됨 (길이: {len(api_key)})")
+    print(f"[OK]   GROQ_API_KEY 확인됨 (길이: {len(api_key)})")
 
     try:
-        client = genai.Client(api_key=api_key, http_options=types.HttpOptions(api_version="v1"))
+        client = Groq(api_key=api_key)
 
-        prompt = f"""
-당신은 글로벌 헤지펀드 투자 전략 회의를 주재하는 AI입니다.
+        prompt = f"""당신은 글로벌 헤지펀드 투자 전략 회의를 주재하는 AI입니다.
 아래 팩트 데이터를 근거로 3명의 애널리스트가 의견을 제시합니다.
 
 ★ 절대 원칙
@@ -237,31 +235,16 @@ SOXX·나스닥 데이터 기반으로 AI·기술 섹터 구조적 성장 팩트
   "analyst_a": "...",
   "analyst_b": "...",
   "analyst_c": "..."
-}}
-"""
-        import time
-        for attempt in range(3):
-            try:
-                resp = client.models.generate_content(
-                    model="gemini-1.5-pro",
-                    contents=prompt,
-                )
-                break
-            except Exception as retry_e:
-                if attempt < 2 and "429" in str(retry_e):
-                    print(f"[WARN] 할당량 초과, 30초 후 재시도 ({attempt+1}/3)")
-                    time.sleep(30)
-                else:
-                    raise retry_e
+}}"""
 
-        text = resp.text.strip()
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            temperature=0.7,
+        )
 
-        # 마크다운 코드블록 제거
-        for fence in ("```json", "```"):
-            if fence in text:
-                text = text.split(fence)[1].split("```")[0].strip()
-                break
-
+        text = resp.choices[0].message.content.strip()
         return json.loads(text)
 
     except Exception as e:
@@ -300,7 +283,7 @@ def main():
         "triggers":        triggers,
     }
     print("\n[5] AI 전문가 토론 생성...")
-    debate = generate_debate(facts, GOOGLE_API_KEY)
+    debate = generate_debate(facts, GROQ_API_KEY)
 
     # 4. 매크로 요약 한 줄
     def _v(d, k, sub="value"):
