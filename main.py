@@ -243,7 +243,7 @@ SOXX·나스닥 데이터 기반으로 AI·기술 섹터 구조적 성장 팩트
         for attempt in range(3):
             try:
                 resp = client.models.generate_content(
-                    model="gemini-1.5-flash-8b",
+                    model="gemini-2.0-flash",
                     contents=prompt,
                 )
                 break
