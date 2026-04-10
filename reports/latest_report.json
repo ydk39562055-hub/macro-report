@@ -1,32 +1,32 @@
 {
-  "date": "2026-04-10 22:55 KST",
-  "macro_summary": "VIX 19.13 (-1.85%) | HY Spread 2.94 | Nasdaq 0.56% | BTC 0.52%",
+  "date": "2026-04-10 22:59 KST",
+  "macro_summary": "VIX 19.08 (-2.1%) | HY Spread 2.94 | Nasdaq 0.48% | BTC 0.82%",
   "expert_debate": {
-    "analyst_a": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
-    "analyst_b": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
-    "analyst_c": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+    "analyst_a": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+    "analyst_b": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+    "analyst_c": "생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.5688,
-    "nasdaq_vs_semiconductor": 0.8331,
-    "nasdaq_vs_vix": -0.8523,
-    "nasdaq_vs_treasury_10y": -0.2137,
-    "nasdaq_vs_dollar_index": -0.3663,
-    "bitcoin_vs_semiconductor": 0.4018,
-    "bitcoin_vs_vix": -0.5028,
-    "bitcoin_vs_treasury_10y": 0.0447,
-    "bitcoin_vs_dollar_index": -0.1281,
-    "semiconductor_vs_vix": -0.7096,
-    "semiconductor_vs_treasury_10y": -0.0997,
-    "semiconductor_vs_dollar_index": -0.3416,
-    "vix_vs_treasury_10y": 0.2361,
-    "vix_vs_dollar_index": 0.2392,
-    "treasury_10y_vs_dollar_index": 0.3554
+    "nasdaq_vs_bitcoin": 0.5693,
+    "nasdaq_vs_semiconductor": 0.8329,
+    "nasdaq_vs_vix": -0.8525,
+    "nasdaq_vs_treasury_10y": -0.2139,
+    "nasdaq_vs_dollar_index": -0.3658,
+    "bitcoin_vs_semiconductor": 0.403,
+    "bitcoin_vs_vix": -0.5031,
+    "bitcoin_vs_treasury_10y": 0.0449,
+    "bitcoin_vs_dollar_index": -0.1286,
+    "semiconductor_vs_vix": -0.7102,
+    "semiconductor_vs_treasury_10y": -0.1,
+    "semiconductor_vs_dollar_index": -0.3409,
+    "vix_vs_treasury_10y": 0.236,
+    "vix_vs_dollar_index": 0.2393,
+    "treasury_10y_vs_dollar_index": 0.3556
   },
   "key_metrics": {
     "vix": {
-      "value": 19.13,
-      "change_pct": -1.85
+      "value": 19.08,
+      "change_pct": -2.1
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
@@ -35,24 +35,24 @@
       "change": -0.18
     },
     "nasdaq": {
-      "value": 22950.1777,
-      "change_pct": 0.56
+      "value": 22931.4805,
+      "change_pct": 0.48
     },
     "bitcoin": {
-      "value": 72141.875,
-      "change_pct": 0.52
+      "value": 72353.125,
+      "change_pct": 0.82
     },
     "semiconductor": {
-      "value": 388.14,
-      "change_pct": 2.51
+      "value": 387.46,
+      "change_pct": 2.33
     },
     "treasury_10y": {
       "value": 4.301,
       "change_pct": 0.19
     },
     "dollar_index": {
-      "value": 98.599,
-      "change_pct": -0.22
+      "value": 98.617,
+      "change_pct": -0.21
     }
   },
   "fred_macro": {
@@ -62,23 +62,43 @@
       "prev": 3.12,
       "change": -0.18
     },
-    "fed_funds_rate": "Data Unavailable",
-    "cpi_yoy": "Data Unavailable",
+    "fed_funds_rate": {
+      "series_id": "FEDFUNDS",
+      "value": 3.64,
+      "prev": 3.64,
+      "change": 0.0
+    },
+    "cpi_yoy": {
+      "series_id": "CPIAUCSL",
+      "value": 330.293,
+      "prev": 327.46,
+      "change": 2.833
+    },
     "unemployment": {
       "series_id": "UNRATE",
       "value": 4.3,
       "prev": 4.4,
       "change": -0.1
     },
-    "m2_money_supply": "Data Unavailable",
-    "consumer_sentiment": "Data Unavailable"
+    "m2_money_supply": {
+      "series_id": "M2SL",
+      "value": 22667.3,
+      "prev": 22469.1,
+      "change": 198.2
+    },
+    "consumer_sentiment": {
+      "series_id": "UMCSENT",
+      "value": 56.6,
+      "prev": 56.4,
+      "change": 0.2
+    }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 10459.12,
+    "rate_nasdaq_vol_ratio": 10452.48,
     "panic_selling": {
-      "vix_z_score": -1.23,
+      "vix_z_score": -1.26,
       "is_panic": false,
-      "latest_vix_change_pct": -1.85
+      "latest_vix_change_pct": -2.1
     },
     "liquidity_crisis": {
       "hy_spread": 2.94,
