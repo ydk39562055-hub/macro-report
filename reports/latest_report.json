@@ -1,27 +1,27 @@
 {
-  "date": "2026-04-11 08:54 KST",
-  "macro_summary": "VIX 19.23 (-1.33%) | HY Spread 2.9 | Nasdaq 0.35% | BTC 1.67%",
+  "date": "2026-04-12 08:05 KST",
+  "macro_summary": "VIX 19.23 (-1.33%) | HY Spread 2.9 | Nasdaq 0.35% | BTC 0.44%",
   "expert_debate": {
-    "analyst_a": "VIX(공포 지수)가 19.23으로 하락하고, 하이일드 스프레드가 2.9로 소폭 하락함에 따라 시장의 리스크가 다소 감소한 것으로 보입니다. VIX의 z-score가 -1.16으로 패닉 판매 상태가 아닌 것으로 나타나며, 하이일드 스프레드의 경고 수준도 낮은 것으로 나타나 현금 비중을 크게 늘릴 필요는 없는 것으로 판단됩니다. 다만, 여전히 시장의 불확실성이 남아 있으므로 일부 현금 비중을 유지하는 것이 필요합니다. 【결론: 관망】",
-    "analyst_b": "나스닥과 반도체(SOXX) 지수의 상승으로 AI·기술 섹터에 대한 투자가 매력적으로 보입니다. 나스닥은 0.35% 상승한 22902.8945로, 반도체 지수는 2.1% 상승한 386.6로 나타났습니다. 이러한 추세는 AI·기술 섹터의 성장 가능성을 나타내므로, 지금 투자하는 것이 매수 타이밍으로 보입니다. 【결론: 매수】",
-    "analyst_c": "자산 간 상관계수를 분석한 결과, 나스닥과 반도체 지수의 상관계수가 0.8326으로 높은 것으로 나타났습니다. 이는 두 자산이 함께 움직이는 경향이 있음을 의미합니다. 반면, 나스닥과 VIX의 상관계수는 -0.8524로 낮은 것으로 나타나, 두 자산이 반대 방향으로 움직이는 경향이 있음을 의미합니다. 이러한 분산투자 전략은 효과적으로 작동하는 것으로 보이므로, 현재 포지션을 유지하는 것이 적절합니다. 【결론: 관망】"
+    "analyst_a": "VIX(공포 지수)가 19.23으로 하락하고, 하이일드 스프레드가 2.9로 하락하는 등 시장의 리스크가 낮아지고 있습니다. 이러한 상황에서 현금 비중을 높일 필요는 없습니다. 대신, 투자 기회를 찾아야 합니다. 특히, 하이일드 스프레드의 변화가 작을수록 시장의 리스크가 낮아진다는 점을 고려하면, 현재의 시장 상황은 투자에 유리한 환경입니다. 따라서, 현금 비중을 유지하거나 낮추는 방향으로 전략을 수립해야 합니다. 【결론: 매수】",
+    "analyst_b": "나스닥과 반도체(SOXX) 지수의 상승으로 AI·기술 섹터에 대한 투자가 매력적으로 보입니다. 나스닥의 상승률이 0.35%로 높은 편이고, 반도체 지수의 상승률이 2.1%로 매우 높습니다. 이러한 상황에서 AI·기술 섹터에 투자하는 것이 적절합니다. 특히, 기술 섹터의 성장 가능성이 크기 때문에, 현재의 투자 기회를 놓치지 말아야 합니다. 【결론: 매수】",
+    "analyst_c": "자산 간 상관계수를 분석한 결과, 나스닥과 반도체(SOXX) 지수의 상관계수가 0.8326으로 높게 나타났습니다. 또한, 비트코인과 반도체 지수의 상관계수는 0.4055로 긍정적인 상관관계를 보이고 있습니다. 이러한 상황에서 분산투자가 잘 되고 있는지 판단하면, 현재의 포지션(투자 비중)을 유지하는 것이 좋습니다. 다만, 나스닥과 비트코인 간의 상관계수가 0.5696으로 높기 때문에, 투자 포트폴리오의 구성에 주의해야 합니다. 【결론: 관망】"
   },
   "asset_correlations": {
     "nasdaq_vs_bitcoin": 0.5696,
     "nasdaq_vs_semiconductor": 0.8326,
     "nasdaq_vs_vix": -0.8524,
     "nasdaq_vs_treasury_10y": -0.2119,
-    "nasdaq_vs_dollar_index": -0.3646,
+    "nasdaq_vs_dollar_index": -0.365,
     "bitcoin_vs_semiconductor": 0.4055,
     "bitcoin_vs_vix": -0.5031,
     "bitcoin_vs_treasury_10y": 0.0482,
-    "bitcoin_vs_dollar_index": -0.1288,
+    "bitcoin_vs_dollar_index": -0.1297,
     "semiconductor_vs_vix": -0.7099,
     "semiconductor_vs_treasury_10y": -0.0957,
-    "semiconductor_vs_dollar_index": -0.3387,
+    "semiconductor_vs_dollar_index": -0.3398,
     "vix_vs_treasury_10y": 0.2345,
-    "vix_vs_dollar_index": 0.2383,
-    "treasury_10y_vs_dollar_index": 0.3541
+    "vix_vs_dollar_index": 0.2386,
+    "treasury_10y_vs_dollar_index": 0.353
   },
   "key_metrics": {
     "vix": {
@@ -35,12 +35,12 @@
       "change": -0.04
     },
     "nasdaq": {
-      "value": 22902.8945,
+      "value": 22902.8906,
       "change_pct": 0.35
     },
     "bitcoin": {
-      "value": 72965.2266,
-      "change_pct": 1.67
+      "value": 73298.5,
+      "change_pct": 0.44
     },
     "semiconductor": {
       "value": 386.6,
@@ -51,8 +51,8 @@
       "change_pct": 0.56
     },
     "dollar_index": {
-      "value": 98.698,
-      "change_pct": -0.12
+      "value": 98.65,
+      "change_pct": -0.17
     }
   },
   "fred_macro": {
@@ -94,7 +94,7 @@
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 31338.86,
+    "rate_nasdaq_vol_ratio": 31338.85,
     "panic_selling": {
       "vix_z_score": -1.16,
       "is_panic": false,
