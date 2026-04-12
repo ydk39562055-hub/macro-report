@@ -368,7 +368,8 @@ def generate_briefing(facts: dict, regime: dict, api_key: str) -> dict:
         prompt = f"""아래 데이터를 전부 읽고 시황 브리핑을 JSON으로 작성해.
 
 [데이터]
-시장 판정: {regime['regime_kr']} (강세 {regime['bull']['met']}/{regime['bull']['total']}, 약세 {regime['bear']['met']}/{regime['bear']['total']})
+시장 판정: {regime['regime_kr']}
+총 지표: {regime['bull']['total'] + regime['bear']['total'] - 3}개 (강세 {regime['bull']['met']}/{regime['bull']['total']}, 약세 조건 중 BTC 200MA 등 별도 {regime['bear']['met']}개 해당)
 {json.dumps(facts, ensure_ascii=False, indent=2)}
 {json.dumps(regime, ensure_ascii=False, indent=2)}
 
@@ -614,6 +615,7 @@ def main():
             "confidence":    regime["confidence"],
             "bull_score":    f"{regime['bull']['met']}/{regime['bull']['total']}",
             "bear_score":    f"{regime['bear']['met']}/{regime['bear']['total']}",
+            "total_score":   f"{regime['bull']['met'] + (regime['bear']['total'] - regime['bear']['met'])}/{regime['bull']['total'] + 1}",
             "bull_details":  regime["bull"]["details"],
             "bear_details":  regime["bear"]["details"],
             "holder_advice": briefing.get("holder_advice", []),
