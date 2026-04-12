@@ -8,6 +8,7 @@ import json
 import datetime
 import numpy as np
 import pandas as pd
+import requests
 import yfinance as yf
 from groq import Groq
 
@@ -28,6 +29,7 @@ FRED_SERIES = {
     "hy_spread":          "BAMLH0A0HYM2",   # 하이일드 스프레드
     "fed_funds_rate":     "FEDFUNDS",        # 기준금리
     "cpi_yoy":            "CPIAUCSL",        # CPI
+    "core_cpi":           "CPILFESL",        # 근원 CPI (식품·에너지 제외)
     "unemployment":       "UNRATE",          # 실업률
     "m2_money_supply":    "M2SL",            # M2 통화량
     "consumer_sentiment": "UMCSENT",         # 소비자 심리
@@ -72,7 +74,7 @@ class CorrelationEngine:
 
 
 # ── 데이터 수집 ────────────────────────────────────────────────────────────────
-def fetch_market_data(tickers: dict, period: str = "90d") -> dict:
+def fetch_market_data(tickers: dict, period: str = "1y") -> dict:
     data = {}
     for name, sym in tickers.items():
         try:
@@ -120,6 +122,299 @@ def fetch_fred_data(series_map: dict, api_key: str) -> dict:
             print(f"[ERR]  FRED {sid}: {e}")
             result[name] = "Data Unavailable"
     return result
+
+
+# ── Fear & Greed Index 수집 ───────────────────────────────────────────────────
+def fetch_fear_greed() -> dict:
+    result = {}
+
+    # 1) CNN Fear & Greed Index (주식시장)
+    try:
+        resp = requests.get(
+            "https://production.dataviz.cnn.io/index/fearandgreed/graphdata",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=15,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        score = data["fear_and_greed"]["score"]
+        rating = data["fear_and_greed"]["rating"]
+        prev_close = data["fear_and_greed"]["previous_close"]
+        result["cnn_fear_greed"] = {
+            "score": round(float(score), 1),
+            "rating": rating,
+            "previous_close": round(float(prev_close), 1),
+            "change": round(float(score) - float(prev_close), 1),
+        }
+        print(f"[OK]   CNN Fear & Greed: {score} ({rating})")
+    except Exception as e:
+        print(f"[ERR]  CNN Fear & Greed: {e}")
+        result["cnn_fear_greed"] = "Data Unavailable"
+
+    # 2) Crypto Fear & Greed Index (암호화폐)
+    try:
+        resp = requests.get(
+            "https://api.alternative.me/fng/?limit=2",
+            timeout=15,
+        )
+        resp.raise_for_status()
+        data = resp.json()["data"]
+        today = data[0]
+        yesterday = data[1] if len(data) > 1 else data[0]
+        score = int(today["value"])
+        prev = int(yesterday["value"])
+        result["crypto_fear_greed"] = {
+            "score": score,
+            "rating": today["value_classification"],
+            "previous": prev,
+            "change": score - prev,
+        }
+        print(f"[OK]   Crypto Fear & Greed: {score} ({today['value_classification']})")
+    except Exception as e:
+        print(f"[ERR]  Crypto Fear & Greed: {e}")
+        result["crypto_fear_greed"] = "Data Unavailable"
+
+    return result
+
+
+# ── 강세/약세장 조건 체크 (마크 미네르비니 기반) ─────────────────────────────────
+def check_bull_bear_conditions(market: dict, fred: dict, fear_greed: dict) -> dict:
+    bull = {}
+    bear = {}
+
+    # ── 강세 조건 (7개) ──
+
+    # 1. VIX < 20 (공포 지수 안정)
+    try:
+        vix = market.get("vix")
+        if vix is not None:
+            v = float(vix.iloc[-1])
+            bull["vix_stable"] = {
+                "name": "VIX 안정권",
+                "desc": f"VIX {v:.1f} (기준 < 20)",
+                "met": v < 20,
+            }
+    except Exception:
+        pass
+
+    # 2. 나스닥 200MA 상회
+    try:
+        nq = market.get("nasdaq")
+        if nq is not None and len(nq) >= 200:
+            ma200 = float(nq.rolling(200).mean().iloc[-1])
+            cur = float(nq.iloc[-1])
+            bull["nasdaq_200ma"] = {
+                "name": "나스닥 200MA 상회",
+                "desc": f"현재 {cur:,.0f} vs 200MA {ma200:,.0f} ({(cur/ma200-1)*100:+.1f}%)",
+                "met": cur > ma200,
+            }
+    except Exception:
+        pass
+
+    # 3. 신용시장 안정 (HY Spread < 3.5)
+    try:
+        hy = fred.get("hy_spread")
+        if isinstance(hy, dict):
+            v = hy["value"]
+            bull["credit_stable"] = {
+                "name": "신용시장 안정",
+                "desc": f"HY 스프레드 {v} (기준 < 3.5)",
+                "met": v < 3.5,
+            }
+    except Exception:
+        pass
+
+    # 4. 고용 견조 (실업률 < 5%)
+    try:
+        unemp = fred.get("unemployment")
+        if isinstance(unemp, dict):
+            v = unemp["value"]
+            bull["employment"] = {
+                "name": "고용 견조",
+                "desc": f"실업률 {v}% (기준 < 5%)",
+                "met": v < 5.0,
+            }
+    except Exception:
+        pass
+
+    # 5. 소비심리 안정 (> 50)
+    try:
+        cs = fred.get("consumer_sentiment")
+        if isinstance(cs, dict):
+            v = cs["value"]
+            bull["consumer"] = {
+                "name": "소비심리 안정",
+                "desc": f"소비자심리지수 {v} (기준 > 50)",
+                "met": v > 50,
+            }
+    except Exception:
+        pass
+
+    # 6. 반도체 200MA 상회
+    try:
+        soxx = market.get("semiconductor")
+        if soxx is not None and len(soxx) >= 200:
+            ma200 = float(soxx.rolling(200).mean().iloc[-1])
+            cur = float(soxx.iloc[-1])
+            bull["semi_200ma"] = {
+                "name": "반도체 200MA 상회",
+                "desc": f"SOXX {cur:,.1f} vs 200MA {ma200:,.1f} ({(cur/ma200-1)*100:+.1f}%)",
+                "met": cur > ma200,
+            }
+    except Exception:
+        pass
+
+    # 7. 인플레 둔화 (근원 CPI MoM < 0.3%)
+    try:
+        core = fred.get("core_cpi")
+        if isinstance(core, dict) and core["prev"]:
+            mom = core["change"] / core["prev"] * 100
+            bull["inflation_cool"] = {
+                "name": "인플레 둔화",
+                "desc": f"근원CPI MoM {mom:.2f}% (기준 < 0.3%)",
+                "met": mom < 0.3,
+            }
+    except Exception:
+        pass
+
+    # ── 약세 조건 (4개) ──
+
+    # 1. VIX > 25
+    try:
+        vix = market.get("vix")
+        if vix is not None:
+            v = float(vix.iloc[-1])
+            bear["vix_fear"] = {
+                "name": "VIX 공포 확대",
+                "desc": f"VIX {v:.1f} (기준 > 25)",
+                "met": v > 25,
+            }
+    except Exception:
+        pass
+
+    # 2. 신용 경색 (HY Spread > 4.0)
+    try:
+        hy = fred.get("hy_spread")
+        if isinstance(hy, dict):
+            v = hy["value"]
+            bear["credit_stress"] = {
+                "name": "신용 경색",
+                "desc": f"HY 스프레드 {v} (기준 > 4.0)",
+                "met": v > 4.0,
+            }
+    except Exception:
+        pass
+
+    # 3. 나스닥 200MA 하회
+    try:
+        nq = market.get("nasdaq")
+        if nq is not None and len(nq) >= 200:
+            ma200 = float(nq.rolling(200).mean().iloc[-1])
+            cur = float(nq.iloc[-1])
+            bear["nasdaq_below"] = {
+                "name": "나스닥 200MA 하회",
+                "desc": f"현재 {cur:,.0f} vs 200MA {ma200:,.0f}",
+                "met": cur < ma200,
+            }
+    except Exception:
+        pass
+
+    # 4. BTC 200MA 하회
+    try:
+        btc = market.get("bitcoin")
+        if btc is not None and len(btc) >= 200:
+            ma200 = float(btc.rolling(200).mean().iloc[-1])
+            cur = float(btc.iloc[-1])
+            bear["btc_below"] = {
+                "name": "BTC 200MA 하회",
+                "desc": f"BTC {cur:,.0f} vs 200MA {ma200:,.0f}",
+                "met": cur < ma200,
+            }
+    except Exception:
+        pass
+
+    # 집계
+    bull_met = sum(1 for c in bull.values() if c["met"])
+    bull_total = len(bull)
+    bear_met = sum(1 for c in bear.values() if c["met"])
+    bear_total = len(bear)
+
+    confidence = round(bull_met / bull_total * 100) if bull_total > 0 else 50
+
+    if bull_met >= 5 and bear_met <= 1:
+        regime, regime_kr = "RISK_ON", "강세장"
+    elif bear_met >= 3:
+        regime, regime_kr = "RISK_OFF", "약세장"
+    else:
+        regime, regime_kr = "NEUTRAL", "중립"
+
+    return {
+        "regime": regime,
+        "regime_kr": regime_kr,
+        "confidence": confidence,
+        "bull": {"met": bull_met, "total": bull_total, "details": bull},
+        "bear": {"met": bear_met, "total": bear_total, "details": bear},
+    }
+
+
+def generate_briefing(facts: dict, regime: dict, api_key: str) -> dict:
+    """시황 브리핑 생성 — 차근이 스타일"""
+    if not api_key:
+        return {"holder_advice": [], "cash_advice": [], "watch_points": []}
+
+    try:
+        client = Groq(api_key=api_key)
+
+        prompt = f"""당신은 개인 투자자를 위한 시황 브리핑 AI입니다.
+아래 데이터와 강세/약세 조건 체크 결과를 바탕으로 시황 브리핑을 작성합니다.
+
+★ 작성 원칙
+- 투자 초보자도 이해할 수 있도록 쉬운 말로 작성
+- 수치를 반드시 인용 (200MA 값, VIX 수치, 스프레드 등)
+- 단정적 표현 금지 → "~할 수 있습니다", "~검토해볼 수 있습니다" 등 참고 수준 표현 사용
+- 각 항목은 1~2문장, 구체적 수치 포함
+
+현재 시장 판정: {regime['regime_kr']} ({regime['regime']})
+확신도: {regime['confidence']}%
+강세 조건: {regime['bull']['met']}/{regime['bull']['total']}
+약세 조건: {regime['bear']['met']}/{regime['bear']['total']}
+
+팩트 데이터:
+{json.dumps(facts, ensure_ascii=False, indent=2)}
+
+강세/약세 조건 상세:
+{json.dumps(regime, ensure_ascii=False, indent=2)}
+
+반드시 아래 JSON 형식으로만 응답:
+{{
+  "holder_advice": [
+    "주식 보유자를 위한 방어 포인트 1 (수치 포함)",
+    "주식 보유자를 위한 방어 포인트 2 (수치 포함)",
+    "주식 보유자를 위한 방어 포인트 3 (수치 포함)"
+  ],
+  "cash_advice": [
+    "현금 대기자를 위한 진입 조건 1 (수치 포함)",
+    "현금 대기자를 위한 진입 조건 2 (수치 포함)",
+    "현금 대기자를 위한 진입 조건 3 (수치 포함)"
+  ],
+  "watch_points": [
+    "앞으로 주목할 투자 포인트 1 (수치 포함)",
+    "앞으로 주목할 투자 포인트 2 (수치 포함)",
+    "앞으로 주목할 투자 포인트 3 (수치 포함)"
+  ]
+}}"""
+
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            temperature=0.5,
+        )
+        return json.loads(resp.choices[0].message.content.strip())
+
+    except Exception as e:
+        print(f"[ERR]  시황 브리핑 생성 실패: {e}")
+        return {"holder_advice": [], "cash_advice": [], "watch_points": []}
 
 
 # ── 인과관계 트리거 분석 ───────────────────────────────────────────────────────
@@ -266,12 +561,21 @@ def main():
     print("\n[2] FRED 매크로 데이터 수집...")
     fred = fetch_fred_data(FRED_SERIES, FRED_API_KEY)
 
+    print("\n[2.5] Fear & Greed Index 수집...")
+    fear_greed = fetch_fear_greed()
+
     # 2. 분석
     print("\n[3] 상관계수 계산...")
     corr = CorrelationEngine(60).compute_all(market)
 
     print("\n[4] 트리거 분석...")
     triggers = analyze_triggers(market, fred)
+
+    print("\n[4.5] 강세/약세장 조건 체크...")
+    regime = check_bull_bear_conditions(market, fred, fear_greed)
+    print(f"       → {regime['regime_kr']} | 확신도 {regime['confidence']}% | "
+          f"강세 {regime['bull']['met']}/{regime['bull']['total']} "
+          f"약세 {regime['bear']['met']}/{regime['bear']['total']}")
 
     lv = latest_values(market)
 
@@ -282,9 +586,14 @@ def main():
         "fred":            fred,
         "correlations_60d": corr,
         "triggers":        triggers,
+        "fear_greed":      fear_greed,
+        "regime":          regime,
     }
     print("\n[5] AI 전문가 토론 생성...")
     debate = generate_debate(facts, GROQ_API_KEY)
+
+    print("\n[6] 시황 브리핑 생성...")
+    briefing = generate_briefing(facts, regime, GROQ_API_KEY)
 
     # 4. 매크로 요약 한 줄
     def _v(d, k, sub="value"):
@@ -304,6 +613,18 @@ def main():
         "date":              datetime.datetime.now(kst).strftime("%Y-%m-%d %H:%M KST"),
         "macro_summary":     macro_summary,
         "expert_debate":     debate,
+        "market_briefing": {
+            "regime":        regime["regime"],
+            "regime_kr":     regime["regime_kr"],
+            "confidence":    regime["confidence"],
+            "bull_score":    f"{regime['bull']['met']}/{regime['bull']['total']}",
+            "bear_score":    f"{regime['bear']['met']}/{regime['bear']['total']}",
+            "bull_details":  regime["bull"]["details"],
+            "bear_details":  regime["bear"]["details"],
+            "holder_advice": briefing.get("holder_advice", []),
+            "cash_advice":   briefing.get("cash_advice", []),
+            "watch_points":  briefing.get("watch_points", []),
+        },
         "asset_correlations": corr,
         "key_metrics": {
             "vix":           lv.get("vix", "Data Unavailable"),
@@ -315,6 +636,7 @@ def main():
             "dollar_index":  lv.get("dollar_index", "Data Unavailable"),
         },
         "fred_macro":        fred,
+        "fear_greed":        fear_greed,
         "causal_triggers":   triggers,
     }
 
