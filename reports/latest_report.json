@@ -1,18 +1,18 @@
 {
-  "date": "2026-04-26 08:58 KST",
-  "macro_summary": "VIX 18.71 (-3.11%) | HY Spread 2.86 | Nasdaq 1.63% | BTC 0.21%",
+  "date": "2026-04-27 09:01 KST",
+  "macro_summary": "VIX 18.71 (-3.11%) | HY Spread N/A | Nasdaq 1.63% | BTC 1.51%",
   "expert_debate": {
-    "analyst_a": "현재 VIX(공포 지수) 값은 18.71으로, 기준치인 20보다 낮습니다. 또한 하이일드 스프레드 값은 2.86으로, 기준치인 3.5보다 낮습니다. 이는 시장의 공포와 위험도가 낮다는 것을 의미하며, 현재 현금 비중을 높일 필요는 없습니다. 따라서 【결론: 매수】",
-    "analyst_b": "나스닥과 반도체(SOXX) 지수의 최근 동향을 살펴보면, 나스닥은 24836.5996으로 1.63% 상승했으며, 반도체 지수는 461.6으로 4.67% 상승했습니다. 이는 기술 섹터의 강세를 의미하며, AI·기술 섹터에 투자하는 것이 적절한 시기입니다. 따라서 【결론: 매수】",
-    "analyst_c": "자산 간 상관계수를 분석하면, 나스닥과 반도체 지수 간의 상관계수는 0.8296으로 높습니다. 이는 두 자산이 함께 움직이는 경향이 있음을 의미합니다. 그러나 나스닥과 비트코인 간의 상관계수는 0.5434로 비교적 낮습니다. 이는 분산투자가 어느 정도 이루어지고 있음을 의미합니다. 따라서 현재 포지션을 유지하는 것이 적절합니다. 【결론: 관망】"
+    "analyst_a": "현재 VIX(공포 지수) 값은 18.71로, 최근 3.11% 하락했다. 이는 시장이 상대적으로 안정적인 상태임을 나타낸다. 그러나 하이일드 스프레드 데이터는 제공되지 않아 정확한 위험 평가가 어려우나, VIX 값으로만 판단할 때 시장이 매우 위험한状态는 아니라고 볼 수 있다. 따라서 현금 비중을 높일 필요는 없으며, 투자에 적극적으로臨할 수 있다. 【결론: 매수】",
+    "analyst_b": "나스닥은 1.63% 상승하여 24,836.60에 도달했으며, 반도체 지수인 SOXX는 4.67% 상승하여 461.6에 이르렀다. 이는 기술 및 AI 섹터가 강세를 보이고 있음을 나타낸다. 나스닥과 반도체 지수의 200일 이동평균선보다 모두 높게 위치하고 있어, 이들 섹터에 대한 투자가 매력적으로 보인다. 【결론: 매수】",
+    "analyst_c": "자산 간 상관계수를 분석하면, 나스닥과 반도체 지수는 0.8296의 높은 상관계수를 보이며, 비트코인과 반도체 지수는 0.4038의 상관계수를 나타낸다. 이는 기술 및 AI 섹터의 강세가 다른 자산에 영향을 미치고 있음을 의미한다. 또한 VIX와 나스닥의 상관계수는 -0.8216로, 시장이 안정적일 때 나스닥이 상승하는 경향이 있다. 분산투자 측면에서 볼 때, 현재 포지션은 기술 및 AI 섹터에 대한 투자가 중심이 되고 있으나, 다양한 자산군으로의 분산이 필요하다. 【결론: 관망】"
   },
   "market_briefing": {
-    "regime": "RISK_ON",
-    "regime_kr": "강세장",
+    "regime": "NEUTRAL",
+    "regime_kr": "중립",
     "confidence": 100,
-    "bull_score": "7/7",
-    "bear_score": "1/4",
-    "total_score": "10/8",
+    "bull_score": "3/3",
+    "bear_score": "1/3",
+    "total_score": "5/4",
     "bull_details": {
       "vix_stable": {
         "name": "VIX 안정권",
@@ -24,29 +24,9 @@
         "desc": "현재 24,837 vs 200MA 22,604 (+9.9%)",
         "met": true
       },
-      "credit_stable": {
-        "name": "신용시장 안정",
-        "desc": "HY 스프레드 2.86 (기준 < 3.5)",
-        "met": true
-      },
-      "employment": {
-        "name": "고용 견조",
-        "desc": "실업률 4.3% (기준 < 5%)",
-        "met": true
-      },
-      "consumer": {
-        "name": "소비심리 안정",
-        "desc": "소비자심리지수 53.3 (기준 > 50)",
-        "met": true
-      },
       "semi_200ma": {
         "name": "반도체 200MA 상회",
         "desc": "SOXX 461.6 vs 200MA 304.0 (+51.8%)",
-        "met": true
-      },
-      "inflation_cool": {
-        "name": "인플레 둔화",
-        "desc": "근원CPI MoM 0.20% (기준 < 0.3%)",
         "met": true
       }
     },
@@ -56,11 +36,6 @@
         "desc": "VIX 18.7 (기준 > 25)",
         "met": false
       },
-      "credit_stress": {
-        "name": "신용 경색",
-        "desc": "HY 스프레드 2.86 (기준 > 4.0)",
-        "met": false
-      },
       "nasdaq_below": {
         "name": "나스닥 200MA 하회",
         "desc": "현재 24,837 vs 200MA 22,604",
@@ -68,21 +43,21 @@
       },
       "btc_below": {
         "name": "BTC 200MA 하회",
-        "desc": "BTC 77,616 vs 200MA 85,204",
+        "desc": "BTC 78,786 vs 200MA 84,981",
         "met": true
       }
     },
     "holder_advice": [
-      "강세 지표가 대부분 통과했지만, 공포탐욕지수가 31으로 공포 예요. 펀더멘털과 심리가 엇갈리는 구간이라 한쪽만 믿기엔 위험해요.",
-      "BTC가 200일 평균(85,204)보다 9% 아래인 77,616이에요. 200일선 회복 전까지는 코인 쪽 추가 매수는 쉬어가는 게 나아요."
+      "현재 나스닥 지수가 24,837으로 200일 평균(22,604)보다 9.9% 높아요. 반도체 지수도 461.6로 200일 평균(304.0)보다 51.8% 높아서 강세 지표가 대부분 통과했어요.",
+      "공포탐욕지수가 47로 중립 구간이에요. 펀더멘털과 심리가 엇갈리는 구간이라 한쪽만 믿기엔 위험해요."
     ],
     "cash_advice": [
-      "현재 나스닥은 24,837로 200MA 22,604보다 9.9% 높아요. 하지만 VIX가 18.7로 안정권에 있으니, 주식 비중을維持하는 게 좋아요.",
-      "근원CPI가 전월대비 0.20%인데, 이걸 연환산하면 2.4%예요. 연준 목표 2%보다 높아서 금리 인하 기대는 아직 이른 편이에요."
+      "BTC가 78,786으로 200일 평균(84,981)보다 7.5% 아래에 있어요. 200일선 회복 전까지는 코인 쪽 추가 매수는 쉬어가는 게 나아요.",
+      "VIX가 18.71로 20 바로 밑이에요. 20 넘어가면 분위기가 확 바뀔 수 있으니, 22까지 오르면 주식 비중을 5~10% 줄여보세요."
     ],
     "watch_points": [
-      "VIX가 18.7로 20 바로 밑이에요. 20 넘어가면 분위기가 확 바뀔 수 있으니, 22까지 오르면 주식 비중을 5~10% 줄여보세요.",
-      "실업률 4.3%로 고용 시장은 안정적인 편이에요. 하지만 소비자심리지수가 53.3으로 다소 하락하고 있으니, 소비 지표를 주시하세요."
+      "현재 총 지표 3개 중 강세 조건이 3개 모두 통과했어요. 하지만 BTC 200MA 하회 등 약세 조건도 1개 존재하니 주의가 필요해요.",
+      "나스닥과 반도체 지수의 상승률이 각각 1.63%, 4.67%로 상당히 높아요. 하지만 VIX의 하락률이 3.11%로 상당히 높아 지속적인 상승에 대한 우려도 있어요."
     ]
   },
   "asset_correlations": {
@@ -107,19 +82,14 @@
       "value": 18.71,
       "change_pct": -3.11
     },
-    "hy_spread": {
-      "series_id": "BAMLH0A0HYM2",
-      "value": 2.86,
-      "prev": 2.84,
-      "change": 0.02
-    },
+    "hy_spread": "Data Unavailable",
     "nasdaq": {
       "value": 24836.5996,
       "change_pct": 1.63
     },
     "bitcoin": {
-      "value": 77615.8984,
-      "change_pct": 0.21
+      "value": 78785.8203,
+      "change_pct": 1.51
     },
     "semiconductor": {
       "value": 461.6,
@@ -130,61 +100,31 @@
       "change_pct": -0.3
     },
     "dollar_index": {
-      "value": 98.51,
-      "change_pct": -0.29
+      "value": 98.641,
+      "change_pct": 0.13
     }
   },
   "fred_macro": {
-    "hy_spread": {
-      "series_id": "BAMLH0A0HYM2",
-      "value": 2.86,
-      "prev": 2.84,
-      "change": 0.02
-    },
-    "fed_funds_rate": {
-      "series_id": "FEDFUNDS",
-      "value": 3.64,
-      "prev": 3.64,
-      "change": 0.0
-    },
-    "cpi_yoy": {
-      "series_id": "CPIAUCSL",
-      "value": 330.293,
-      "prev": 327.46,
-      "change": 2.833
-    },
-    "core_cpi": {
-      "series_id": "CPILFESL",
-      "value": 334.165,
-      "prev": 333.512,
-      "change": 0.653
-    },
-    "unemployment": {
-      "series_id": "UNRATE",
-      "value": 4.3,
-      "prev": 4.4,
-      "change": -0.1
-    },
+    "hy_spread": "Data Unavailable",
+    "fed_funds_rate": "Data Unavailable",
+    "cpi_yoy": "Data Unavailable",
+    "core_cpi": "Data Unavailable",
+    "unemployment": "Data Unavailable",
     "m2_money_supply": {
       "series_id": "M2SL",
       "value": 22667.3,
       "prev": 22469.1,
       "change": 198.2
     },
-    "consumer_sentiment": {
-      "series_id": "UMCSENT",
-      "value": 53.3,
-      "prev": 56.6,
-      "change": -3.3
-    }
+    "consumer_sentiment": "Data Unavailable"
   },
   "fear_greed": {
     "cnn_fear_greed": "Data Unavailable",
     "crypto_fear_greed": {
-      "score": 31,
-      "rating": "Fear",
-      "previous": 39,
-      "change": -8
+      "score": 47,
+      "rating": "Neutral",
+      "previous": 33,
+      "change": 14
     }
   },
   "causal_triggers": {
@@ -194,11 +134,6 @@
       "is_panic": false,
       "latest_vix_change_pct": -3.11
     },
-    "liquidity_crisis": {
-      "hy_spread": 2.86,
-      "change": 0.02,
-      "alert": false,
-      "severity": "LOW"
-    }
+    "liquidity_crisis": "Data Unavailable"
   }
 }
