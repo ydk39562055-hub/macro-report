@@ -1,32 +1,32 @@
 {
-  "date": "2026-05-12 07:57 KST",
-  "macro_summary": "VIX 18.38 (6.92%) | HY Spread 2.81 | Nasdaq 0.1% | BTC -0.38%",
+  "date": "2026-05-13 08:04 KST",
+  "macro_summary": "VIX 17.99 (-2.12%) | HY Spread 2.79 | Nasdaq -0.71% | BTC -1.32%",
   "expert_debate": {
-    "analyst_a": "현재 VIX(공포 지수) 값은 18.38로, 여전히 안정적인 수준입니다. 또한 하이일드 스프레드 값은 2.81로, 신용시장의 안정성을 나타내고 있습니다. 이러한 지표들은 현재 시장의 위험성이 크지 않음을 나타내므로, 현금 비중을 높일 필요는 없습니다. 다만, VIX의 최근 상승세를 주시해야 합니다. 【결론: 매수】",
-    "analyst_b": "나스닥과 반도체(SOXX) 지수의 최근 상승세를 보면서, AI·기술 섹터에 투자할 타이밍이 된 것으로 판단됩니다. 나스닥은 200일 이동평균선상에 위치해 있으며, 반도체 지수도 200일 이동평균선에 비해 68.1% 상승한 상태입니다. 이러한 데이터는 성장성에 대한 긍정적인 신호를 보내고 있습니다. 【결론: 매수】",
-    "analyst_c": "자산 간 상관계수 분석 결과, 나스닥과 반도체 지수의 상관계수는 0.8148로, 높은 상관관계를 보이고 있습니다. 또한 나스닥과 VIX의 상관계수는 -0.7673으로, 반대의 움직임을 나타내고 있습니다. 이러한 상관계수는 분산투자가 잘되고 있음을 나타내며, 현재 포지션을 유지하는 것이 적절합니다. 【결론: 관망】"
+    "analyst_a": "VIX(공포 지수)가 17.99로 상대적으로 안정된 수준이며, 하이일드 스프레드가 2.79로 신용시장의 안정성은 유지되고 있습니다. 이러한 데이터를 근거로 현 시장이 큰 위험을 보이지 않는 것으로 판단되며, 따라서 현금 비중을 높일 필요는 없습니다.【결론: 매수】",
+    "analyst_b": "나스닥과 반도체(SOXX) 지수가 각각 26088.2031과 515.99로 상승세를 유지하고 있으며, 나스닥은 200MA(22,878)보다 14% 상회하고 있습니다. 또한 SOXX는 200MA(318.3)보다 62.1% 상회하고 있습니다. 이러한 데이터를 근거로 AI·기술 섹터에 투자하는 것이 적절한 시점으로 판단됩니다.【결론: 매수】",
+    "analyst_c": "나스닥과 반도체(SOXX) 간의 상관계수는 0.8167로 강한 상관관계를 보이고 있습니다. 또한 나스닥과 비트코인 간의 상관계수는 0.4853으로 양의 상관관계를 유지하고 있습니다. 이러한 데이터를 근거로 분산투자가 잘 되어 있다고 판단되며, 지금 포지션을 유지하는 것이 적절하다고 생각합니다.【결론: 관망】"
   },
   "market_briefing": {
     "regime": "RISK_ON",
     "regime_kr": "강세장",
-    "confidence": 100,
-    "bull_score": "7/7",
+    "confidence": 86,
+    "bull_score": "6/7",
     "bear_score": "1/4",
-    "total_score": "10/8",
+    "total_score": "9/8",
     "bull_details": {
       "vix_stable": {
         "name": "VIX 안정권",
-        "desc": "VIX 18.4 (기준 < 20)",
+        "desc": "VIX 18.0 (기준 < 20)",
         "met": true
       },
       "nasdaq_200ma": {
         "name": "나스닥 200MA 상회",
-        "desc": "현재 26,274 vs 200MA 22,853 (+15.0%)",
+        "desc": "현재 26,088 vs 200MA 22,878 (+14.0%)",
         "met": true
       },
       "credit_stable": {
         "name": "신용시장 안정",
-        "desc": "HY 스프레드 2.81 (기준 < 3.5)",
+        "desc": "HY 스프레드 2.79 (기준 < 3.5)",
         "met": true
       },
       "employment": {
@@ -41,105 +41,106 @@
       },
       "semi_200ma": {
         "name": "반도체 200MA 상회",
-        "desc": "SOXX 532.8 vs 200MA 316.9 (+68.1%)",
+        "desc": "SOXX 516.0 vs 200MA 318.3 (+62.1%)",
         "met": true
       },
       "inflation_cool": {
         "name": "인플레 둔화",
-        "desc": "근원CPI MoM 0.20% (기준 < 0.3%)",
-        "met": true
+        "desc": "근원CPI MoM 0.38% (기준 < 0.3%)",
+        "met": false
       }
     },
     "bear_details": {
       "vix_fear": {
         "name": "VIX 공포 확대",
-        "desc": "VIX 18.4 (기준 > 25)",
+        "desc": "VIX 18.0 (기준 > 25)",
         "met": false
       },
       "credit_stress": {
         "name": "신용 경색",
-        "desc": "HY 스프레드 2.81 (기준 > 4.0)",
+        "desc": "HY 스프레드 2.79 (기준 > 4.0)",
         "met": false
       },
       "nasdaq_below": {
         "name": "나스닥 200MA 하회",
-        "desc": "현재 26,274 vs 200MA 22,853",
+        "desc": "현재 26,088 vs 200MA 22,878",
         "met": false
       },
       "btc_below": {
         "name": "BTC 200MA 하회",
-        "desc": "BTC 81,825 vs 200MA 82,584",
+        "desc": "BTC 80,652 vs 200MA 82,432",
         "met": true
       }
     },
     "holder_advice": [
-      "강세 지표가 대부분 통과했지만, 공포탐욕지수가 48으로 중립적인 편이에요. 펀더멘털과 심리가 엇갈리는 구간이라 한쪽만 믿기엔 위험해요.",
-      "BTC가 200일 평균(82,584)보다 1% 아래인 81,825이에요. 200일선 회복 전까지는 코인 쪽 추가 매수는 쉬어가는 게 나아요."
+      "강세 지표가 대부분 통과했지만, 공포탐욕지수가 49로 중립적인 편이에요. 펀더멘털과 심리가 엇갈리는 구간이라 한쪽만 믿기엔 위험해요.",
+      "BTC가 200일 평균보다 1% 아래인 80,652이에요. 200일선 회복 전까지는 코인 쪽 추가 매수는 쉬어가는 게 나아요."
     ],
     "cash_advice": [
-      "근원CPI가 전월대비 0.20%인데, 이걸 연환산하면 2.4%예요. 연준 목표 2%보다 높아서 금리 인하 기대는 아직 이른 편이에요.",
-      "VIX가 18.38로 20 바로 밑이에요. 20 넘어가면 분위기가 확 바뀔 수 있으니, 22까지 오르면 주식 비중을 5~10% 줄여보세요."
+      "총 지표 중 강세가 6개, 약세 조건이 1개로 강세장인 상황이에요. 하지만 공포탐욕지수가 중립적인 편이니, 투자 시 주의가 필요해요.",
+      "나스닥이 200일 평균보다 14% 높은 26,088이에요. 하지만 VIX가 18로 안정적인 편이니, 주식 비중을 조절하는 게 좋아요."
     ],
     "watch_points": [
-      "나스닥이 200일 평균(22,853)보다 15% 높은 26,274이에요. 이 수준에서 지지부를 확인하고, 추가 상승 여부를 주시해 봐요.",
-      "반도체 지수가 200일 평균(316.9)보다 68% 높은 532.76이에요. 이 수준에서 기술적 조정 가능성이 있으니 주시해 봐요."
+      "VIX가 18로 안정적인 편이지만, 20 넘어가면 분위기가 확 바뀔 수 있으니 주시해야 해요.",
+      "근원CPI가 전월대비 0.38%인데, 이걸 연환산하면 4.6%예요. 연준 목표 2%보다 높아서 금리 인하 기대는 아직 이른 편이에요.",
+      "고용률이 4.3%로 안정적인 편이지만, 소비자심리지수가 53.3으로 중립적인 편이니, 경제 지표를 계속 주시해야 해요."
     ]
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.4618,
-    "nasdaq_vs_semiconductor": 0.8148,
-    "nasdaq_vs_vix": -0.7673,
-    "nasdaq_vs_treasury_10y": -0.425,
-    "nasdaq_vs_dollar_index": -0.5275,
-    "bitcoin_vs_semiconductor": 0.3586,
-    "bitcoin_vs_vix": -0.4016,
-    "bitcoin_vs_treasury_10y": -0.1219,
-    "bitcoin_vs_dollar_index": -0.2201,
-    "semiconductor_vs_vix": -0.636,
-    "semiconductor_vs_treasury_10y": -0.2841,
-    "semiconductor_vs_dollar_index": -0.4838,
-    "vix_vs_treasury_10y": 0.4059,
-    "vix_vs_dollar_index": 0.4544,
-    "treasury_10y_vs_dollar_index": 0.553
+    "nasdaq_vs_bitcoin": 0.4853,
+    "nasdaq_vs_semiconductor": 0.8167,
+    "nasdaq_vs_vix": -0.7612,
+    "nasdaq_vs_treasury_10y": -0.4473,
+    "nasdaq_vs_dollar_index": -0.535,
+    "bitcoin_vs_semiconductor": 0.3721,
+    "bitcoin_vs_vix": -0.4004,
+    "bitcoin_vs_treasury_10y": -0.1059,
+    "bitcoin_vs_dollar_index": -0.2282,
+    "semiconductor_vs_vix": -0.6169,
+    "semiconductor_vs_treasury_10y": -0.3041,
+    "semiconductor_vs_dollar_index": -0.4922,
+    "vix_vs_treasury_10y": 0.3996,
+    "vix_vs_dollar_index": 0.4481,
+    "treasury_10y_vs_dollar_index": 0.5646
   },
   "key_metrics": {
     "vix": {
-      "value": 18.38,
-      "change_pct": 6.92
+      "value": 17.99,
+      "change_pct": -2.12
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
-      "value": 2.81,
-      "prev": 2.79,
-      "change": 0.02
+      "value": 2.79,
+      "prev": 2.81,
+      "change": -0.02
     },
     "nasdaq": {
-      "value": 26274.125,
-      "change_pct": 0.1
+      "value": 26088.2031,
+      "change_pct": -0.71
     },
     "bitcoin": {
-      "value": 81825.1406,
-      "change_pct": -0.38
+      "value": 80652.3281,
+      "change_pct": -1.32
     },
     "semiconductor": {
-      "value": 532.76,
-      "change_pct": 2.39
+      "value": 515.99,
+      "change_pct": -3.15
     },
     "treasury_10y": {
-      "value": 4.41,
-      "change_pct": 1.05
+      "value": 4.463,
+      "change_pct": 1.2
     },
     "dollar_index": {
-      "value": 97.905,
-      "change_pct": 0.07
+      "value": 98.289,
+      "change_pct": 0.36
     }
   },
   "fred_macro": {
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
-      "value": 2.81,
-      "prev": 2.79,
-      "change": 0.02
+      "value": 2.79,
+      "prev": 2.81,
+      "change": -0.02
     },
     "fed_funds_rate": {
       "series_id": "FEDFUNDS",
@@ -149,15 +150,15 @@
     },
     "cpi_yoy": {
       "series_id": "CPIAUCSL",
-      "value": 330.293,
-      "prev": 327.46,
-      "change": 2.833
+      "value": 332.407,
+      "prev": 330.293,
+      "change": 2.114
     },
     "core_cpi": {
       "series_id": "CPILFESL",
-      "value": 334.165,
-      "prev": 333.512,
-      "change": 0.653
+      "value": 335.423,
+      "prev": 334.165,
+      "change": 1.258
     },
     "unemployment": {
       "series_id": "UNRATE",
@@ -181,22 +182,22 @@
   "fear_greed": {
     "cnn_fear_greed": "Data Unavailable",
     "crypto_fear_greed": {
-      "score": 48,
+      "score": 49,
       "rating": "Neutral",
-      "previous": 47,
+      "previous": 48,
       "change": 1
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 2143.88,
+    "rate_nasdaq_vol_ratio": 1626.68,
     "panic_selling": {
-      "vix_z_score": 0.11,
+      "vix_z_score": -1.23,
       "is_panic": false,
-      "latest_vix_change_pct": 6.92
+      "latest_vix_change_pct": -2.12
     },
     "liquidity_crisis": {
-      "hy_spread": 2.81,
-      "change": 0.02,
+      "hy_spread": 2.79,
+      "change": -0.02,
       "alert": false,
       "severity": "LOW"
     }
