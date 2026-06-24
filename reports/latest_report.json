@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-24 08:09 KST",
-  "macro_summary": "VIX 19.49 (12.79%) | HY Spread 2.65 | Nasdaq -2.21% | BTC -2.38%",
+  "date": "2026-06-25 08:05 KST",
+  "macro_summary": "VIX 18.63 (-4.41%) | HY Spread 2.71 | Nasdaq -0.43% | BTC -2.99%",
   "expert_debate": {
-    "analyst_a": "현재 VIX(공포 지수)는 19.49로, 공포 확대는 아님을 알 수 있습니다. 또한 하이일드 스프레드는 2.65로, 신용시장 안정 상태임을 알 수 있습니다. 따라서 시장이 위험한 상태는 아니므로, 현금 비중을 유지하는 것이 좋습니다. 【결론: 관망】",
-    "analyst_b": "나스닥은 25587.0391로, 200MA(23,571)보다 8.6% 높습니다. 반도체(SOXX)는 603.39로, 200MA(363.6)보다 66% 높습니다. 이러한 데이터는 AI·기술 섹터에 지금 투자해도 좋으며, 매수 타이밍임을 시사합니다. 【결론: 매수】",
-    "analyst_c": "나스닥과 반도체(SOXX) 간 상관계수는 0.8037로, 높은 상관관계를 보이고 있습니다. 또한 나스닥과 비트코인 간 상관계수는 0.4435로, 중간 정도의 상관관계를 보이고 있습니다. 따라서 분산투자가 잘 되고 있으므로, 지금 포지션을 유지하는 것이 좋습니다. 【결론: 관망】"
+    "analyst_a": "VIX(18.63)와 하이일드 스프레드(2.71)는 현재 시장의 위험을 나타내는 지표입니다. VIX는 20보다 낮고 하이일드 스프레드는 3.5보다 낮기 때문에, 시장은 상대적으로 안정적인 상태로 판단됩니다. 그러나, 최근 VIX의 변화(-4.41%)와 하이일드 스프레드의 소폭 상승(0.06)을 고려하면, 현금 비중을 높여야 할 필요는 없지만, 시장의 변동성을 주시해야 합니다. 따라서, 현금 비중은 유지하고, 시장의 변동성에 대비하는 것이 현명할 것입니다. 【결론: 관망】",
+    "analyst_b": "나스닥(25476.6348)과 반도체(SOXX, 601.5)의 데이터를 분석하면, 두 지수가 모두 200일 이동평균선(나스닥: 23590, SOXX: 365.3) 위에 위치해 있습니다. 이는 강세장(RISK_ON)으로 판단되며, AI·기술 섹터에 투자하는 것이 좋습니다. 나스닥과 반도체의 상승세가 유지되고 있으므로, 매수 타이밍으로 판단됩니다. 【결론: 매수】",
+    "analyst_c": "자산 간 상관계수를 분석하면, 나스닥과 반도체(SOXX)의 상관계수는 0.8071로 매우 높습니다. 반면, 나스닥과 비트코인의 상관계수는 0.4174로 상대적으로 낮습니다. 이는 나스닥과 반도체가 함께 움직이는 경향이 있지만, 비트코인은 다른 자산과 비교적 독립적으로 움직인다는 것을 의미합니다. 따라서, 분산투자가 잘 되고 있는 것으로 판단되며, 現 포지션을 유지하는 것이 좋습니다. 【결론: 관망】"
   },
   "market_briefing": {
     "regime": "RISK_ON",
@@ -16,17 +16,17 @@
     "bull_details": {
       "vix_stable": {
         "name": "VIX 안정권",
-        "desc": "VIX 19.5 (기준 < 20)",
+        "desc": "VIX 18.6 (기준 < 20)",
         "met": true
       },
       "nasdaq_200ma": {
         "name": "나스닥 200MA 상회",
-        "desc": "현재 25,587 vs 200MA 23,571 (+8.6%)",
+        "desc": "현재 25,477 vs 200MA 23,590 (+8.0%)",
         "met": true
       },
       "credit_stable": {
         "name": "신용시장 안정",
-        "desc": "HY 스프레드 2.65 (기준 < 3.5)",
+        "desc": "HY 스프레드 2.71 (기준 < 3.5)",
         "met": true
       },
       "employment": {
@@ -41,7 +41,7 @@
       },
       "semi_200ma": {
         "name": "반도체 200MA 상회",
-        "desc": "SOXX 603.4 vs 200MA 363.6 (+66.0%)",
+        "desc": "SOXX 601.5 vs 200MA 365.3 (+64.6%)",
         "met": true
       },
       "inflation_cool": {
@@ -53,93 +53,93 @@
     "bear_details": {
       "vix_fear": {
         "name": "VIX 공포 확대",
-        "desc": "VIX 19.5 (기준 > 25)",
+        "desc": "VIX 18.6 (기준 > 25)",
         "met": false
       },
       "credit_stress": {
         "name": "신용 경색",
-        "desc": "HY 스프레드 2.65 (기준 > 4.0)",
+        "desc": "HY 스프레드 2.71 (기준 > 4.0)",
         "met": false
       },
       "nasdaq_below": {
         "name": "나스닥 200MA 하회",
-        "desc": "현재 25,587 vs 200MA 23,571",
+        "desc": "현재 25,477 vs 200MA 23,590",
         "met": false
       },
       "btc_below": {
         "name": "BTC 200MA 하회",
-        "desc": "BTC 62,430 vs 200MA 76,448",
+        "desc": "BTC 60,797 vs 200MA 76,307",
         "met": true
       }
     },
     "holder_advice": [
-      "현재 강세장입니다. 하지만 공포탐욕지수가 23으로 극단적 공포예요. 펀더멘털과 심리가 엇갈리는 구간이라 한쪽만 믿기엔 위험해요.",
-      "BTC가 200일 평균(76,448)보다 18% 아래인 62,430이에요. 200일선 회복 전까지는 코인 쪽 추가 매수는 쉬어가는 게 나아요."
+      "현재 강세장이지만, 공포탐욕지수가 17로 극단적 공포예요. 펀더멘털과 심리가 엇갈리는 구간이라 한쪽만 믿기엔 위험해요.",
+      "BTC가 200일 평균보다 19% 아래예요. 200일선 회복 전까지는 코인 쪽 추가 매수는 쉬어가는 게 나아요."
     ],
     "cash_advice": [
       "근원CPI가 전월대비 0.21%인데, 이걸 연환산하면 2.52%예요. 연준 목표 2%보다 높아서 금리 인하 기대는 아직 이른 편이에요.",
-      "VIX가 19.49로 20 바로 밑이에요. 20 넘어가면 분위기가 확 바뀔 수 있으니, 22까지 오르면 주식 비중을 5~10% 줄여보세요."
+      "VIX가 18.63로 20 바로 밑이에요. 20 넘어가면 분위기가 확 바뀔 수 있으니, 22까지 오르면 주식 비중을 5~10% 줄여보세요."
     ],
     "watch_points": [
-      "나스닥이 200일 평균(23,571)보다 8.6% 상회하고 있어요. 지속 가능한지 주시하세요.",
-      "반도체 지수가 200일 평균(363.6)보다 66% 상회하고 있어요. 과열된 상황인지 주시하세요."
+      "나스닥이 200일 평균을 8% 상회하고 있어요. 이 추세가 지속될지 주시해야 해요.",
+      "현금 비중을 20% 이상 유지하는 게 좋을 것 같아요. 불확실성이 높은 상황이니 위험 자산에 대한 비중을 조절해야 해요."
     ]
   },
   "asset_correlations": {
-    "nasdaq_vs_bitcoin": 0.4435,
-    "nasdaq_vs_semiconductor": 0.8037,
-    "nasdaq_vs_vix": -0.7892,
-    "nasdaq_vs_treasury_10y": -0.5813,
-    "nasdaq_vs_dollar_index": -0.5603,
-    "bitcoin_vs_semiconductor": 0.2711,
-    "bitcoin_vs_vix": -0.2685,
-    "bitcoin_vs_treasury_10y": -0.324,
-    "bitcoin_vs_dollar_index": -0.3825,
-    "semiconductor_vs_vix": -0.6346,
-    "semiconductor_vs_treasury_10y": -0.4758,
-    "semiconductor_vs_dollar_index": -0.4142,
-    "vix_vs_treasury_10y": 0.4747,
-    "vix_vs_dollar_index": 0.4928,
-    "treasury_10y_vs_dollar_index": 0.4956
+    "nasdaq_vs_bitcoin": 0.4174,
+    "nasdaq_vs_semiconductor": 0.8071,
+    "nasdaq_vs_vix": -0.7707,
+    "nasdaq_vs_treasury_10y": -0.5545,
+    "nasdaq_vs_dollar_index": -0.5591,
+    "bitcoin_vs_semiconductor": 0.2557,
+    "bitcoin_vs_vix": -0.2492,
+    "bitcoin_vs_treasury_10y": -0.2823,
+    "bitcoin_vs_dollar_index": -0.3752,
+    "semiconductor_vs_vix": -0.6258,
+    "semiconductor_vs_treasury_10y": -0.4512,
+    "semiconductor_vs_dollar_index": -0.4127,
+    "vix_vs_treasury_10y": 0.4668,
+    "vix_vs_dollar_index": 0.4811,
+    "treasury_10y_vs_dollar_index": 0.4708
   },
   "key_metrics": {
     "vix": {
-      "value": 19.49,
-      "change_pct": 12.79
+      "value": 18.63,
+      "change_pct": -4.41
     },
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
-      "value": 2.65,
-      "prev": 2.66,
-      "change": -0.01
+      "value": 2.71,
+      "prev": 2.65,
+      "change": 0.06
     },
     "nasdaq": {
-      "value": 25587.0391,
-      "change_pct": -2.21
+      "value": 25476.6348,
+      "change_pct": -0.43
     },
     "bitcoin": {
-      "value": 62430.0391,
-      "change_pct": -2.38
+      "value": 60796.5781,
+      "change_pct": -2.99
     },
     "semiconductor": {
-      "value": 603.39,
-      "change_pct": -7.88
+      "value": 601.5,
+      "change_pct": -0.31
     },
     "treasury_10y": {
-      "value": 4.493,
-      "change_pct": 0.94
+      "value": 4.402,
+      "change_pct": -1.1
     },
     "dollar_index": {
-      "value": 101.39,
-      "change_pct": 0.37
+      "value": 101.584,
+      "change_pct": 0.17
     }
   },
   "fred_macro": {
     "hy_spread": {
       "series_id": "BAMLH0A0HYM2",
-      "value": 2.65,
-      "prev": 2.66,
-      "change": -0.01
+      "value": 2.71,
+      "prev": 2.65,
+      "change": 0.06
     },
     "fed_funds_rate": {
       "series_id": "FEDFUNDS",
@@ -181,22 +181,22 @@
   "fear_greed": {
     "cnn_fear_greed": "Data Unavailable",
     "crypto_fear_greed": {
-      "score": 23,
+      "score": 17,
       "rating": "Extreme Fear",
-      "previous": 20,
-      "change": 3
+      "previous": 23,
+      "change": -6
     }
   },
   "causal_triggers": {
-    "rate_nasdaq_vol_ratio": 22590.91,
+    "rate_nasdaq_vol_ratio": 1568.91,
     "panic_selling": {
-      "vix_z_score": 0.78,
+      "vix_z_score": -0.98,
       "is_panic": false,
-      "latest_vix_change_pct": 12.79
+      "latest_vix_change_pct": -4.41
     },
     "liquidity_crisis": {
-      "hy_spread": 2.65,
-      "change": -0.01,
+      "hy_spread": 2.71,
+      "change": 0.06,
       "alert": false,
       "severity": "LOW"
     }
